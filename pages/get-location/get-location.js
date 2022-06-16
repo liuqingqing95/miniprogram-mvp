@@ -12,8 +12,8 @@ Page({
     altitude: false,
     isHighAccuracy: false,
     highAccuracyExpireTime: 0,
-    latitude: 12.1,
-    longitude: 12.1,
+    latitude: 0,
+    longitude: 0,
     type: 'wgs84',
     apiData: {
       content: '',
@@ -102,22 +102,8 @@ Page({
   chooseLocation() {
     this.resetApiData()
     xhs?.chooseLocation({
-      latitude: this.data.latitude - 0,
-      longitude: this.data.longitude - 0,
-      success: res => {
-        this.updateApiData('success', res)
-      },
-      fail: res => {
-        this.updateApiData('fail', res)
-      },
-      complete: res => {
-        this.updateApiData('complete', res)
-      },
-    })
-  },
-  chooseLocationNoParams() {
-    this.resetApiData()
-    xhs?.chooseLocation({
+      latitude: this.data.latitude,
+      longitude: this.data.longitude,
       success: res => {
         this.updateApiData('success', res)
       },
@@ -136,7 +122,6 @@ Page({
       this.setData({ count: this.data.count + 1 })
     })
   },
-
   offLocationChange() {
     if (this?.offLocation?.remove) {
       this.offLocation.remove()
@@ -160,16 +145,5 @@ Page({
   },
   handleLatitude(e) {
     this.setData({ latitude: e.detail.value - 0 })
-  },
-  openLocation() {
-    xhs.openLocation?.({
-      latitude: 40.04,
-      longitude: 116.27,
-      address: '北京市海淀区西北旺东路10号院',
-      name: '百度科技园',
-      complete: res => {
-        console.log('【openLocation】：', res)
-      },
-    })
   },
 })

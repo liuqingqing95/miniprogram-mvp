@@ -1,14 +1,17 @@
 <import src="../common/head.xhsml" />
 <import src="../common/foot.xhsml" />
-<import src="../common/status.xhsml" />
 
 <view class="container">
   <template is="head" data="{{title: 'on/stopPullDownRefresh'}}"/>
-  <template is="status" data="{{apiData}}" />
+
   <view class="page-body">
     <view class="page-section">
-      <button bindtap="startPullDownRefresh">startPullDownRefresh</button>
-      <button bindtap="stopPullDownRefresh">stopPullDownRefresh</button>
+      <view class="page-body-info">
+        <text class="page-body-text">下滑页面即可刷新</text>
+      </view>
+      <view class="btn-area">
+        <button bindtap="stopPullDownRefresh">停止刷新</button>
+      </view>
     </view>
   </view>
 

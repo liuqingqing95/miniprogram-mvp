@@ -13,7 +13,6 @@ Page({
   onLoad() {
     const that = this
     xhs?.onNetworkStatusChange(res => {
-      console.log('res----------', res)
       that.setData({
         isConnected: res.isConnected,
         networkType: res.networkType,

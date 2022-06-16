@@ -8,25 +8,7 @@
     <view class="page-section">
       <view class="page-section-title">这是一个自动聚焦的input</view>
       <view class="textarea-wrp">
-        <input style="color:green" 
-          class="weui-input text-style" 
-          value="{{inputChangeValue}}" 
-          type="{{type}}"
-          password="{{password}}" 
-          placeholder="{{placeholder}}" 
-          placeholder-style="{{placeholderStyle}}" 
-          placeholder-class="{{placeholderClass}}" 
-          disabled="{{disabled}}" maxlength="{{maxlength}}" 
-          focus="{{focus}}" 
-          auto-focus="true" 
-          cursor="{{cursor}}"
-          selection-start="{{selectionStart}}" 
-          selection-end="{{selectionEnd}}" 
-          data-name="zhangsan"
-          data-age="20"
-          bindfocus="bindTextFocus" 
-          bindblur="bindTextBlur" 
-          bindinput="bindTextInput" />
+        <input style="color:green" class="weui-input text-style" value="{{value}}" type="{{type}}" password="{{password}}" placeholder="{{placeholder}}" placeholder-style="{{placeholderStyle}}" placeholder-class="{{placeholderClass}}" disabled="{{disabled}}" maxlength="{{maxlength}}" focus="{{focus}}" auto-focus="true" cursor="{{cursor}}" selection-start="{{selectionStart}}" selection-end="{{selectionEnd}}" bindfocus="bindTextFocus" bindblur="bindTextBlur" bindinput="bindTextInput" />
       </view>
     </view>
     <view class="page-section" style="margin-top: 20px;margin-bottom: 120px;">
@@ -169,7 +151,7 @@
       <view class="weui-cells__title">控制输入的input</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" bindinput="bindReplaceInput" placeholder="弹出value值" blur="true"/>
+          <input class="weui-input" bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
         </view>
       </view>
     </view>
@@ -195,15 +177,6 @@
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <input class="weui-input" type="text" placeholder="bindchange" bindchange="onChange" />
-        </view>
-      </view>
-    </view>
-
-    <view class="page-section">
-      <view class="weui-cells__title">bindconfirm</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <input class="weui-input" type="text" placeholder="bindconfirm" bindconfirm="bindconfirm" />
         </view>
       </view>
     </view>

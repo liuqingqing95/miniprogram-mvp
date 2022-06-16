@@ -12,13 +12,11 @@ Page({
   chooseAddress() {
     xhs?.chooseAddress({
       success: res => {
-        console.log('res:', res)
         this.setData({
           addressInfo: res,
         })
       },
       fail(err) {
-        console.log('err:', res)
         console.log(err)
       },
     })

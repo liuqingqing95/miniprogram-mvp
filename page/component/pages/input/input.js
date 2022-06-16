@@ -14,7 +14,7 @@ Page({
     value: '',
     type: 'text',
     placeholder: '',
-    placeholderStyle: 'rgba(0,20,30,40)',
+    placeholderStyle: 'color:red;',
     placeholderClass: 'input-placeholder',
     disabled: false,
     maxlength: 140,
@@ -33,23 +33,21 @@ Page({
   },
 
   bindReplaceInput(e) {
-    xhs?.Toast({ title: e.detail.value })
-    this.setData({ value: e.detail.value })
-    // const value = e.detail.value
-    // let pos = e.detail.cursor
-    // let left
-    // if (pos !== -1) {
-    //   // 光标在中间
-    //   left = e.detail.value.slice(0, pos)
-    //   // 计算光标的位置
-    //   pos = left.replace(/11/g, '2').length
-    // }
+    const value = e.detail.value
+    let pos = e.detail.cursor
+    let left
+    if (pos !== -1) {
+      // 光标在中间
+      left = e.detail.value.slice(0, pos)
+      // 计算光标的位置
+      pos = left.replace(/11/g, '2').length
+    }
 
-    // // 直接返回对象，可以对输入进行过滤处理，同时可以控制光标的位置
-    // return {
-    //   value: value.replace(/11/g, '2'),
-    //   cursor: pos,
-    // }
+    // 直接返回对象，可以对输入进行过滤处理，同时可以控制光标的位置
+    return {
+      value: value.replace(/11/g, '2'),
+      cursor: pos,
+    }
 
     // 或者直接返回字符串,光标在最后边
     // return value.replace(/11/g,'2'),
@@ -146,18 +144,13 @@ Page({
     })
   },
 
-  bindTextInput(e) {
-    console.log(`bindTextInput: ${JSON.stringify(e)}`)
+  bindTextInput({ detail }) {
     this.setData({
-      inputChangeValue: e.detail.value,
+      inputChangeValue: detail.value,
     })
   },
 
   onChange(e) {
     console.log('onChange', e)
-  },
-
-  bindconfirm(e) {
-    console.log('bindconfirm', e)
   },
 })

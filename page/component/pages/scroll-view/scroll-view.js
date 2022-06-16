@@ -1,13 +1,7 @@
 const order = ['demo1', 'demo2', 'demo3']
 
 Page({
-  onLoad() {
-    setTimeout(() => {
-      this.setData({
-        dynamicHeight: 200,
-      })
-    }, 5000)
-  },
+  onLoad() {},
   onPulling(e) {
     this.updateApiData('onPulling:', e)
   },
@@ -48,7 +42,6 @@ Page({
       fail: false,
       complete: false,
     },
-    dynamicHeight: 100,
   },
 
   resetApiData() {

@@ -17,20 +17,6 @@ Page({
     current: 0,
     interval: 2000,
     duration: 500,
-    src: '',
-    nextMargin: '40rpx',
-  },
-
-  onReady() {
-    setTimeout(() => {
-      this.setData({
-        src: 'https://b.bdstatic.com/searchbox/icms/searchbox/images/demo.webp',
-      })
-
-      this.setData({
-        height: 180,
-      })
-    }, 1000)
   },
 
   changeIndicatorDots() {

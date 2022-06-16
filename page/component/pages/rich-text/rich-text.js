@@ -13,7 +13,7 @@ const nodeSnip = `Page({
       name: 'div',
       attrs: {
         class: 'div_class',
-        style: 'line-height: 60rpx; color: #1AAD19;'
+        style: 'line-height: 60px; color: #1AAD19;'
       },
       children: [{
         type: 'text',
@@ -42,7 +42,7 @@ Page({
         name: 'div',
         attrs: {
           class: 'div_class',
-          style: 'line-height: 60rpx; color: #1AAD19;',
+          style: 'line-height: 60px; color: #1AAD19;',
         },
         children: [
           {
@@ -57,7 +57,7 @@ Page({
       <br />
       <abbr>abbr</abbr>
       <br />
-      <b style="width: 100rpx">b width 100rpx</b>
+      <b>b</b>
       <br />
       <blockquote>blockquote</blockquote>
       <br />
@@ -71,7 +71,7 @@ Page({
       <br />
       <fieldset>fieldset</fieldset>
       <br />
-      <h1 style="height: 100rpx">h1 height 100rpx</h1>
+      <h1>h1</h1>
       <h2>h2</h2>
       <h3>h3</h3>
       <h4>h4</h4>

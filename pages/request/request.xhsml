@@ -13,7 +13,6 @@
     <button size="mini" bindtap="makeRequestTimeout" type="primary" disabled="{{buttonDisabled}}">Timeout</button>
     <button size="mini" bindtap="makeRequestRequestArrayBuffer" type="primary" disabled="{{buttonDisabled}}">ReqArrayBuffer</button>
     <button size="mini" bindtap="makeRequestResponseArrayBuffer" type="primary" disabled="{{buttonDisabled}}">ResArrayBuffer</button>
-    <button size="mini" bindtap="makeRequestPostForm" type="primary" disabled="{{buttonDisabled}}">POST www-form-urlencoded</button>
   </view>
   <template is="foot" />
 </view>

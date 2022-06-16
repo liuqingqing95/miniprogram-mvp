@@ -4,7 +4,12 @@ Page({
     headerText: 'test',
     cancelTime: 'xxx',
     array: ['美国', '中国', '巴西', '日本'],
-    arrayObject: [{ name: '美国' }, { name: '中国' }, { name: '巴西' }, { name: '日本' }],
+    arrayObject: [
+      { name: '美国' },
+      { name: '中国' },
+      { name: '巴西' },
+      { name: '日本' },
+    ],
     objectArray: [
       {
         id: 0,
@@ -24,11 +29,7 @@ Page({
       },
     ],
     index: 1,
-    multiArray: [
-      ['无脊柱动物', '脊柱动物'],
-      ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物'],
-      ['猪肉绦虫', '吸血虫'],
-    ],
+    multiArray: [['无脊柱动物', '脊柱动物'], ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物'], ['猪肉绦虫', '吸血虫']],
     objectMultiArray: [
       [
         {
@@ -39,8 +40,7 @@ Page({
           id: 1,
           name: '脊柱动物',
         },
-      ],
-      [
+      ], [
         {
           id: 0,
           name: '扁性动物',
@@ -61,8 +61,7 @@ Page({
           id: 3,
           name: '节肢动物',
         },
-      ],
-      [
+      ], [
         {
           id: 0,
           name: '猪肉绦虫',
@@ -163,13 +162,11 @@ Page({
     })
   },
   bindMonthChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       month: e.detail.value,
     })
   },
   bindYearChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       year: e.detail.value,
     })

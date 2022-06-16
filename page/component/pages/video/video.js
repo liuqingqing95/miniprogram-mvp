@@ -17,7 +17,17 @@ Page({
   },
 
   onReady() {
-    this.videoContext = xhs?.createVideoContext('myVideo')
+    setTimeout(() => {
+      this.videoContext = xhs?.createVideoContext('myVideo')
+      // this.videoContext.sendDanmu({
+      //   time: 10,
+      //   text: 'fandeji',
+      //   color: 'red',
+      // })
+      this.setData({
+        height: 180,
+      })
+    }, 5000)
   },
 
   inputValue: '',
@@ -65,27 +75,13 @@ Page({
     console.log('退出小窗模式')
   },
 
-  bindVideoPlay() {
+  bindPlayVideo() {
     this.videoContext.play()
   },
-
-  bindVideoPause() {
-    this.videoContext.pause()
-  },
-
-  bindVideoStop() {
-    this.videoContext.stop()
-  },
-
-  bindVideoSeek() {
-    this.videoContext.seek(10)
-  },
-
-  bindVideoSendDanmu() {
+  bindSendDanmu() {
     this.videoContext.sendDanmu({
-      text: '小红书小程序',
+      text: this.inputValue,
       color: getRandomColor(),
-      time: 12,
     })
   },
 

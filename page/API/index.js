@@ -6,8 +6,8 @@ Page({
     }
   },
 
-  onTabItemTap(item) {
-    console.log('====API:', item)
+  onTabItemTap() {
+    console.log('--------onTabItemTap')
   },
   onShow() {
     console.log('--------onShow')
@@ -70,10 +70,6 @@ Page({
             zh: '第三方平台 extConfig',
             url: 'ext-config/ext-config',
           },
-          {
-            zh: 'getAccountInfoSync',
-            url: 'get-account-info-sync/get-account-info-sync',
-          },
         ],
       },
       {
@@ -106,7 +102,7 @@ Page({
             url: 'navigator/navigator',
           },
           {
-            zh: 'start/stop pull-down-refresh',
+            zh: '下拉刷新',
             url: 'pull-down-refresh/pull-down-refresh',
           },
           {
@@ -128,14 +124,6 @@ Page({
           {
             zh: 'hideHomeButton',
             url: 'hide-home-button/hide-home-button',
-          },
-          {
-            zh: 'getMenuButtonBoundingClientRect',
-            url: 'menu-button/menu-button',
-          },
-          {
-            zh: '动画',
-            url: 'animation/animation',
           },
         ],
       },
@@ -196,10 +184,6 @@ Page({
             zh: '手机联系人',
             url: 'add-contact/add-contact',
           },
-          {
-            zh: '内存告警',
-            url: 'memory-warn/memory-warn',
-          },
         ],
       },
       {
@@ -225,10 +209,6 @@ Page({
           {
             zh: 'upload-file',
             url: 'upload-file/upload-file',
-          },
-          {
-            zh: 'websocket',
-            url: 'websocket/websocket',
           },
         ],
       },
@@ -265,14 +245,6 @@ Page({
             zh: '动态加载字体',
             url: 'load-font-face/load-font-face',
           },
-          {
-            zh: '蓝牙',
-            url: 'bluetooth/bluetooth',
-          },
-          {
-            zh: 'downloadFile',
-            url: 'download-file/download-file',
-          },
         ],
       },
       {
@@ -296,7 +268,7 @@ Page({
           },
           {
             zh: '异步存储',
-            url: 'storage-async/storage',
+            url: 'storageAsync/storage',
           },
         ],
       },

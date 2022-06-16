@@ -1,10 +1,5 @@
 <view class="container" style="height:{{editorHeight}}px;">
-	<editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady"
-		bindblur="bindblur"
-		bindfocus="bindfocus"
-		show-img-size
-        show-img-resize
-        show-img-toolbar>
+	<editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady">
 	</editor>
 </view>
 

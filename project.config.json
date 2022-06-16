@@ -34,17 +34,17 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.18.0",
-  "projectname": "miniprogram-6",
+  "projectname": "miniprogram-mvp",
   "debugOptions": {
     "hidedInDevtools": []
   },
-  "appid": "61820d6df68f6000015634ab",
   "scripts": {},
   "staticServerOptions": {
     "baseURL": "",
     "servePath": ""
   },
   "isGameTourist": false,
+  "appid": "944785626",
   "condition": {
     "search": {
       "list": []
@@ -64,5 +64,6 @@
     "miniprogram": {
       "list": []
     }
-  }
+  },
+  "miniprogramRoot": "."
 }

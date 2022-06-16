@@ -19,12 +19,12 @@
       </view>
       <view class="page-section-spacing">
         <scroll-view class="scroll-view_H" showScrollbar="{{false}}" scroll-left="200" bindscrolltoupper="upperHorizontal" bindscrolltolower="lowerHorizontal" scroll-y scroll-x bindscroll="scroll" style="width: 100%">
-          <view id="demo1" class="scroll-view-item_H1 demo-text-1" style="height: {{dynamicHeight}}px"></view>
-          <view id="demo2" class="scroll-view-item_H1 demo-text-2" style="height: {{dynamicHeight}}px"></view>
-          <view id="demo3" class="scroll-view-item_H1 demo-text-3" style="height: {{dynamicHeight}}px"></view>
-          <view id="demo4" class="scroll-view-item_H1 demo-text-1" style="height: {{dynamicHeight}}px"></view>
-          <view id="demo5" class="scroll-view-item_H1 demo-text-2" style="height: {{dynamicHeight}}px"></view>
-          <view id="demo6" class="scroll-view-item_H1 demo-text-3" style="height: {{dynamicHeight}}px"></view>
+          <view id="demo1" class="scroll-view-item_H1 demo-text-1"></view>
+          <view id="demo2" class="scroll-view-item_H1 demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item_H1 demo-text-3"></view>
+          <view id="demo4" class="scroll-view-item_H1 demo-text-1"></view>
+          <view id="demo5" class="scroll-view-item_H1 demo-text-2"></view>
+          <view id="demo6" class="scroll-view-item_H1 demo-text-3"></view>
         </scroll-view>
       </view>
     </view>

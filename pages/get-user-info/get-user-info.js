@@ -33,8 +33,18 @@ Page({
     this.setData({ apiData })
   },
 
-  getUserInfo(e) {
-    console.log(e)
-    this.updateApiData('success', e)
+  getUserInfo() {
+    this.resetApiData()
+    xhs?.getUserProfile({
+      success: res => {
+        this.updateApiData('success', res)
+      },
+      fail: res => {
+        this.updateApiData('fail', res)
+      },
+      complete: res => {
+        this.updateApiData('complete', res)
+      },
+    })
   },
 })

@@ -22,9 +22,7 @@
         <view xhs:for="{{months}}" style="line-height: 50px; text-align: center;color:black;">{{item}}月</view>
       </picker-view-column>
       <picker-view-column>
-        <block  xhs:for="{{daysMap[value[1]] || days}}">
-          <view style="line-height: 50px; text-align: center;color:black;">{{item}}日</view>
-        </block>
+        <view xhs:for="{{days}}" style="line-height: 50px; text-align: center;color:black;">{{item}}日</view>
       </picker-view-column>
       <picker-view-column>
         <view class="icon-container">

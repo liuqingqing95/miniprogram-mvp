@@ -111,7 +111,4 @@ Page({
   onChange(e) {
     console.log('textarea onChange', e)
   },
-  bindconfirm(e) {
-    console.log('textarea bindconfirm', e)
-  },
 })

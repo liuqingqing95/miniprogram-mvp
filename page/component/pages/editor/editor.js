@@ -1,55 +1,3 @@
-const contents = {
-  html: `
-  <p>支持插入图片</p>
-  <br>
-  <p>
-      <img src="https://b.bdstatic.com/searchbox/icms/searchbox/img/editor-image-demo.png" data-custom="id=abcd&amp;role=god" alt="image-alt" class="imageCls" width="100%">
-  </p>
-  <hr>
-  <p>支持以下字符样式</p>
-  <p>
-      <b>bold粗体</b>
-      <em>italic斜体</em>
-      <u>underline下划线</u>
-  </p>
-  <p>
-      <sub>sub下标</sub>
-      <sup>super上标</sup>
-  </p>
-  <hr>
-  <p>支持以下列表样式</p>
-  <ol>
-      <li>有序列表</li>
-      <li>有序列表</li>
-  </ol>
-  <ul>
-      <li>无序列表</li>
-  </ul>
-  <ul>
-      <li>无序列表</li>
-  </ul>
-  <ul data-checked="true">
-      <li>选框列表</li>
-  </ul>
-  <ul data-checked="false">
-      <li>选框列表</li>
-  </ul>
-  <hr>
-  <p>支持以下字符大小</p>
-  <h1>H1 一级标题</h1>
-  <h2>H2 二级标题</h2>
-  <h3>H3 三级标题</h3>
-  <h4>H4 四级标题</h4>
-  <h5>H5 五级标题</h5>
-  <h6>H6 六级标题</h6>
-  <hr>
-  <p>支持以下对齐方式</p>
-  <p style="text-align:center">center中间对齐</p>
-  <p style="text-align:right">right 右对齐</p>
-  <p style="text-align:justify">justify 自动对齐</p>
-  <hr>
-  <span style="color:#00bc89;background-color:#333">color 支持设置字体及背景颜色</span>`,
-}
 Page({
   onShareAppMessage() {
     return {
@@ -73,10 +21,12 @@ Page({
     })
   },
   onLoad() {
-    const { platform, safeArea, model, screenHeight } = xhs?.getSystemInfoSync()
+    const {
+      platform, safeArea, model, screenHeight,
+    } = xhs?.getSystemInfoSync()
     let safeHeight
     if (safeArea) {
-      safeHeight = screenHeight - safeArea.bottom
+      safeHeight = (screenHeight - safeArea.bottom)
     } else {
       safeHeight = 32
     }
@@ -86,7 +36,7 @@ Page({
     const that = this
     this.updatePosition(0)
     let keyboardHeight = 0
-    xhs?.onKeyboardHeightChange?.(res => {
+    xhs?.onKeyboardHeightChange(res => {
       if (res.height === keyboardHeight) {
         return
       }
@@ -106,8 +56,7 @@ Page({
   updatePosition(keyboardHeight) {
     const toolbarHeight = 50
     const { windowHeight, platform } = xhs?.getSystemInfoSync()
-    const editorHeight =
-      keyboardHeight > 0 ? windowHeight - keyboardHeight - toolbarHeight : windowHeight
+    const editorHeight = keyboardHeight > 0 ? (windowHeight - keyboardHeight - toolbarHeight) : windowHeight
     if (keyboardHeight === 0) {
       this.setData({
         editorHeight,
@@ -133,19 +82,9 @@ Page({
   },
   onEditorReady() {
     const that = this
-    that.editorCtx = xhs?.createEditorContext?.('editor')
-    this.clear()
-    this.setContents()
-    this.removeFormat()
-    this.insertDivider()
-
-    setTimeout(() => {
-      this.editorCtx.getContents({
-        success: res => {
-          console.log('getContents success', res)
-        },
-      })
-    }, 1000)
+    xhs?.createSelectorQuery().select('#editor').context(res => {
+      that.editorCtx = res.context
+    }).exec()
   },
   blur() {
     this.editorCtx.blur()
@@ -153,12 +92,11 @@ Page({
   format(e) {
     const { name, value } = e.target.dataset
     if (!name) return
-    console.log('format', name, value)
+    // console.log('format', name, value)
     this.editorCtx.format(name, value)
   },
   onStatusChange(e) {
     const formats = e.detail
-    console.log('onStatusChange', e)
     this.setData({ formats })
   },
   insertDivider() {
@@ -171,24 +109,12 @@ Page({
   clear() {
     this.editorCtx.clear({
       success(res) {
-        console.log('clear success', res)
+        console.log('clear success')
       },
     })
   },
   removeFormat() {
-    this.editorCtx.removeFormat({
-      success: res => {
-        console.log('removeFormat success', res)
-      },
-    })
-  },
-  setContents() {
-    this.editorCtx.setContents({
-      ...contents,
-      success: res => {
-        console.log('setContents success', res)
-      },
-    })
+    this.editorCtx.removeFormat()
   },
   insertDate() {
     const date = new Date()
@@ -215,12 +141,5 @@ Page({
         })
       },
     })
-  },
-
-  bindfocus(e) {
-    console.log('bindfocus', e)
-  },
-  bindblur(e) {
-    console.log('bindblur', e)
   },
 })

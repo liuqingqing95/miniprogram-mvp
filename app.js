@@ -1,5 +1,4 @@
 global.isDemo = true
-// console.log(globalThis.a.b)
 App({
   getLaunchOptionsSync(e) {
     console.log('App:getLaunchOptionsSync', e)
@@ -12,9 +11,8 @@ App({
     console.log('App:onError=======', e)
   },
   onLaunch(opts, data) {
-    // xhs?.showToast({ title: 'App:onLaunch' })
+    xhs?.showToast({ title: 'App:onLaunch' })
     console.log('App:onLaunch========', opts)
-    console.log('getExtConfigSync======', xhs?.getExtConfigSync())
     if (data && data.path) {
       xhs?.navigateTo({
         url: data.path,
@@ -22,15 +20,15 @@ App({
     }
   },
   onPageNotFound(opts) {
-    // xhs?.showToast({ title: 'App:onPageNotFound' })
+    xhs?.showToast({ title: 'App:onPageNotFound' })
     console.log('App:onPageNotFound========', opts)
   },
   onShow(opts) {
-    // xhs?.showToast({ title: 'App:onShow' })
+    xhs?.showToast({ title: 'App:onShow' })
     console.log('App:onShow=======', opts)
   },
   onHide(opts) {
-    // xhs?.showToast({ title: 'App:onHide' })
+    xhs?.showToast({ title: 'App:onHide' })
     console.log('App:onHide=======', opts)
   },
   globalData: {
@@ -56,4 +54,3 @@ App({
     }
   },
 })
-// require('./error.js')

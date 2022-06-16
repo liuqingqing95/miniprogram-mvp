@@ -1,5 +1,1 @@
-<web-view 
-bindload="handleLoad"
-binderror="handleError"
-bindmessage="handleMessage"
-src="https://fe-video-qc.xhscdn.com/fe-platform/fcb3f3037b59933b17ac5a9122ebc2398d1bf6b5.html"></web-view>
+<webview src="https://fe-video-qc.xhscdn.com/fe-platform/a36e078ef8c5df9f67e9ee3f3a62a4f11e58f4ce/test.html"></webview>

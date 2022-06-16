@@ -20,24 +20,15 @@ const pageObject = {
     }
   },
 
-  onLoad() {
-    console.log('onLoad 2')
-  },
   onShow() {
-    console.log('onShow 2')
-  },
-  onReady() {
-    console.log('onReady 2')
-  },
-  onHide() {
-    console.log('onHide 2')
-  },
-  onUnload() {
-    console.log('onUnload 2')
-  },
-
-  onTabItemTap(item) {
-    console.log('====component:', item)
+    xhs
+      ?.hideHomeButton()
+      .then(e => {
+        console.log('hideHomeButton show then:', e)
+      })
+      .catch(e => {
+        console.log('hideHomeButton show catch:', e)
+      })
   },
 
   setDisabled() {
@@ -67,7 +58,7 @@ const pageObject = {
   },
 
   handleGetUserInfo(e) {
-    console.log('handleGetUserInfo', e.detail)
+    console.log(e.detail)
   },
 
   handleOpenSetting(e) {

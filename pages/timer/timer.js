@@ -16,7 +16,6 @@ Page({
       self.setData({ value: '不支持' })
     } else {
       globalThis.setTimeout(() => {
-        console.log('支持')
         self.setData({ value: '支持' })
       }, 1000)
     }

@@ -6,59 +6,19 @@ Page({
     }
   },
 
-  data: {
-    apiData: {
-      content: '',
-      success: false,
-      fail: false,
-      complete: false,
-    },
-  },
-
-  resetApiData() {
-    this.setData({
-      apiData: {
-        success: false,
-        fail: false,
-        complete: false,
-        content: '',
-      },
+  onPullDownRefresh() {
+    xhs?.showToast({
+      title: 'loading...',
+      icon: 'loading',
     })
-  },
-
-  updateApiData(type, content) {
-    const apiData = { ...this.data.apiData }
-    apiData[type] = true
-    apiData.content = JSON.stringify(content)
-    this.setData({ apiData })
-  },
-
-  startPullDownRefresh() {
-    this.resetApiData()
-    xhs?.startPullDownRefresh({
-      success: res => {
-        this.updateApiData('success', res)
-      },
-      fail: res => {
-        this.updateApiData('fail', res)
-      },
-      complete: res => {
-        this.updateApiData('complete', res)
-      },
-    })
+    console.log('onPullDownRefresh', new Date())
   },
 
   stopPullDownRefresh() {
-    this.resetApiData()
     xhs?.stopPullDownRefresh({
-      success: res => {
-        this.updateApiData('success', res)
-      },
-      fail: res => {
-        this.updateApiData('fail', res)
-      },
-      complete: res => {
-        this.updateApiData('complete', res)
+      complete(res) {
+        xhs?.hideToast()
+        console.log(res, new Date())
       },
     })
   },

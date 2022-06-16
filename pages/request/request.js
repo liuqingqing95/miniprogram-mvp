@@ -153,17 +153,4 @@ Page({
       },
     })
   },
-  makeRequestPostForm() {
-    this.request({
-      url: requestUrl,
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      data: {
-        name: 1,
-        age: 2,
-      },
-    })
-  },
 })

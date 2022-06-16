@@ -16,8 +16,6 @@
         circular="{{circular}}"
         indicator-color="{{indicatorColor}}"
         indicator-active-color="{{indicatorActiveColor}}"
-        previous-margin="10px"
-        next-margin="40rpx"
         bindchange="onChange"
       >
         <block xhs:for="{{background}}" xhs:key="*this">
@@ -26,49 +24,6 @@
           </swiper-item>
         </block>
       </swiper>
-
-       <swiper
-        indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}"
-        current="{{current}}"
-        vertical="{{vertical}}"
-        interval="{{interval}}"
-        duration="{{duration}}"
-        circular="{{circular}}"
-        indicator-color="{{indicatorColor}}"
-        indicator-active-color="{{indicatorActiveColor}}"
-        previous-margin="10px"
-        next-margin="40rpx"
-        bindchange="onChange"
-      >
-        <block xhs:for="{{background}}" xhs:key="*this">
-          <swiper-item>
-             <image class="image-custom" src="{{src}}" lazy-load="true" />
-          </swiper-item>
-        </block>
-      </swiper>
-
-      <swiper
-        indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}"
-        current="{{current}}"
-        vertical="{{vertical}}"
-        interval="{{interval}}"
-        duration="{{duration}}"
-        circular="{{circular}}"
-        indicator-color="{{indicatorColor}}"
-        indicator-active-color="{{indicatorActiveColor}}"
-        previous-margin="10px"
-        next-margin="40rpx"
-        bindchange="onChange"
-      >
-        <block xhs:for="{{background}}" xhs:key="*this">
-          <swiper-item>
-              <video id="myVideo" autoplay="{{true}}" style="height:{{height}}px" src="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4"></video>
-          </swiper-item>
-        </block>
-      </swiper>
-
     </view>
     <view class="page-section" style="margin-top: 20px;margin-bottom: 0;">
       <view class="weui-cells weui-cells_after-title">

@@ -26,7 +26,6 @@
           bindblur="bindTextAreaBlur"
           bindinput="bindTextAreaInput"
           bindchange="onChange"
-          bindconfirm="bindconfirm"
         />
       </view>
     </view>

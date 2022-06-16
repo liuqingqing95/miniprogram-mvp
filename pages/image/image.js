@@ -127,7 +127,7 @@ Page({
   saveImageToPhotosAlbum() {
     this.resetApiData()
     xhs?.saveImageToPhotosAlbum({
-      filePath: this.data.saveImageToPhotosAlbumLink,
+      filePath: this.saveImageToPhotosAlbumLink,
       success: res => {
         this.updateApiData('success', res)
       },

@@ -1,9 +1,0 @@
-<import src="../common/head.xhsml" />
-<import src="../common/foot.xhsml" />
-<view class="container">
-  <template is="head" data="{{title: 'request'}}" />
-  <view class="page-body">
-    <button bindtap="onConnect">connect</button>
-  </view>
-  <template is="foot" />
-</view>

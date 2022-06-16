@@ -7,12 +7,6 @@
   <view class="page-body">
     <view class="page-section">
       <view class="btn-area">
-        <label for="">chooseLocation：latitude</label>
-        <input class="input" type="text" value="{{latitude}}" bindinput="handleLatitude" />
-        <label for="">chooseLocation：longitude</label>
-        <input class="input" type="text" value="{{longitude}}" bindinput="handleLongitude" />
-        <button type="primary" bindtap="chooseLocation">chooseLocation</button>
-        <button type="primary" bindtap="chooseLocationNoParams">chooseLocation 无参数</button>
         <view>
           <text>altitude</text>
           <switch checked="{{altitude}}" bindchange="handleAltitude" />
@@ -32,7 +26,11 @@
         <button type="primary" bindtap="stopLocationUpdate">stopLocationUpdate</button>
         <button type="primary" bindtap="onLocationChange">onLocationChange</button>
         <button type="primary" bindtap="offLocationChange">offLocationChange</button>
-        <button type="primary" bindtap="openLocation">openLocation</button>
+        <label for="">chooseLocation：latitude</label>
+        <input class="input" type="text" value="{{latitude}}" bindinput="handleLatitude" />
+        <label for="">chooseLocation：longitude</label>
+        <input class="input" type="text" value="{{longitude}}" bindinput="handleLongitude" />
+        <button type="primary" bindtap="chooseLocation">chooseLocation</button>
       </view>
     </view>
   </view>

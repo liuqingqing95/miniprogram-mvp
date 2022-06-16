@@ -4,14 +4,3 @@
   display: inline;
   color: var(--weui-LINK);
 }
-
-.test {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: red;
-}
-.text-button {
-  background-color: green;
-}

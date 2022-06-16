@@ -9,7 +9,7 @@
       <view class="page-section-title">表单组件在label内</view>
       <checkbox-group class="group" bindchange="checkboxChange">
         <view class="label-1" xhs:for="{{checkboxItems}}">
-          <label class="red">
+          <label>
             <checkbox value="{{item.name}}" checked="{{item.checked}}"></checkbox>
             <text class="label-1-text">{{item.value}}</text>
           </label>
@@ -19,7 +19,7 @@
 
     <view class="page-section page-section-gap">
       <view class="page-section-title">label用for标识表单组件</view>
-      <radio-group class="group" bindchange="radioChange" data-for="forLabel">
+      <radio-group class="group" bindchange="radioChange">
         <view class="label-2" xhs:for="{{radioItems}}">
           <radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}"></radio>
           <label class="label-2-text" for="{{item.name}}"><text>{{item.name}}</text></label>
@@ -33,13 +33,6 @@
         <checkbox class="checkbox-3">选项一</checkbox>
         <checkbox class="checkbox-3">选项二</checkbox>
         <view class="label-3-text">点击该label下的文字默认选中第一个checkbox</view>
-      </label>
-    </view>
-
-    <view class="page-section page-section-gap">
-      <button id="share" open-type="share" style="display:none"></button>
-      <label class="label-3" for="share">
-        分享
       </label>
     </view>
   </view>
