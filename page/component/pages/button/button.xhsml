@@ -1,0 +1,168 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'button'}}" />
+  <view class="page-body">
+    <view class="page-section page-section-spacing">
+      <button size="{{size}}" type="{{type}}" plain="{{plain}}" disabled="{{disabled}}" loading="{{loading}}" form-type="{{formType}}" hover-class="{{hoverClass}}" hover-stop-propagation="{{hoverStopPropagation}}" hover-start-time="{{hoverStartTime}}" hover-stay-time="{{hoverStayTime}}">
+        这是一个按钮
+      </button>
+    </view>
+    <view class="page-section" style="margin-top: 20px;margin-bottom: 20px;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            尺寸
+            <text class="filed-tip">(size)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <radio-group bindchange="changeSize" class="weui-cell">
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <radio value="default" checked="{{ size === 'default' }}" />
+                </view>
+                <view class="weui-cell__bd">default</view>
+              </label>
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <radio value="mini" checked="{{ size === 'mini' }}" />
+                </view>
+                <view class="weui-cell__bd">mini</view>
+              </label>
+            </radio-group>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            类型
+            <text class="filed-tip">(type)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <radio-group bindchange="changeType" class="weui-cell">
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <radio value="primary" checked="{{ size === 'primary' }}" />
+                </view>
+                <view class="weui-cell__bd">primary</view>
+              </label>
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <radio value="default" checked="{{ size === 'default' }}" />
+                </view>
+                <view class="weui-cell__bd">default</view>
+              </label>
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <radio value="warn" checked="{{ size === 'warn' }}" />
+                </view>
+                <view class="weui-cell__bd">warn</view>
+              </label>
+            </radio-group>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            是否镂空
+            <text class="filed-tip">(plain)</text>
+          </view>
+          <view class="weui-cell__ft">
+            <switch checked="{{plain}}" bindchange="changePlain" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            是否禁用
+            <text class="filed-tip">(disabled)</text>
+          </view>
+          <view class="weui-cell__ft">
+            <switch checked="{{disabled}}" bindchange="changeDisabled" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            是否带 loading 图标
+            <text class="filed-tip">(loading)</text>
+          </view>
+          <view class="weui-cell__ft">
+            <switch checked="{{loading}}" bindchange="changeLoading" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page-body">
+    <view class="page-section page-section-spacing">
+      <button type="primary" hover-class="button-yellow">这是一个按钮</button>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">
+          指定按钮按下去的样式类
+          <text class="filed-tip">(hover-class)</text>
+        </view>
+      </view>
+    </view>
+    <view class="page-section page-section-spacing">
+      <view class="button-parent" hover-class="button-parent-red">
+        <button type="primary" hover-class="button-yellow" hover-stop-propagation="{{hoverStopPropagation}}">这是一个按钮</button>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">
+          阻止祖先节点出现点击状态
+          <text class="filed-tip">(hoverStopPropagation)</text>
+        </view>
+        <view class="weui-cell__ft">
+          <switch checked="{{hoverStopPropagation}}" bindchange="changeHoverStopPropagation" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section" style="margin-bottom:120px;">
+      <view>
+        <button type="primary" hover-class="button-yellow" hover-start-time="{{hoverStartTime}}" hover-stay-time="{{hoverStayTime}}">这是一个按钮</button>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            按住后多久出现点击态，单位毫秒
+            <text class="filed-tip">(hoverStartTime)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{hoverStartTime}}" bindinput="changeHoverStartTime" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            手指松开后点击态保留时间，单位毫秒
+            <text class="filed-tip">(hoverStayTime)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{hoverStayTime}}" bindinput="changeHoverStayTime" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page-body">
+    <view class="btn-area" id="buttonContainer">
+      <button type="primary">页面主操作 Normal</button>
+      <button type="primary" loading="true">页面主操作 Loading</button>
+      <button type="primary" disabled="true">页面主操作 Disabled</button>
+      <button type="default">页面次要操作 Normal</button>
+      <button type="default" disabled="true">页面次要操作 Disabled</button>
+      <button type="warn">警告类操作 Normal</button>
+      <button type="warn" disabled="true">警告类操作 Disabled</button>
+      <view class="button-sp-area">
+        <button type="primary" plain="true">按钮</button>
+        <button type="primary" disabled="true" plain="true">不可点击的按钮</button>
+        <button type="default" plain="true">按钮</button>
+        <button type="default" disabled="true" plain="true">按钮</button>
+        <button class="mini-btn" type="primary" size="mini">按钮</button>
+        <button class="mini-btn" type="default" size="mini">按钮</button>
+        <button class="mini-btn" type="warn" size="mini">按钮</button>
+      </view>
+      <button type="primary" open-type="contact" bindcontact="handleContact" show-message-card="{{true}}" send-message-title="临时会话">打开客服会话</button>
+      <button type="primary" open-type="share">触发用户转发</button>
+      <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="handleGetPhoneNumber">获取用户手机号</button>
+      <button type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="handleGetUserInfo">获取用户信息</button>
+      <button type="primary" open-type="openSetting" bindopensetting="handleOpenSetting">打开设置授权页</button>
+      <button type="primary" open-type="feedback">打开意见反馈</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

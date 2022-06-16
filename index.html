@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试页面</title>
+  </head>
+  <body>
+    <button onclick="getLocation()">getLocation</button>
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>
+      var vConsole = new window.VConsole()
+    </script>
+    <script>
+      const init = () => {
+        if (window.xhs) return
+        let callbackId = 0
+        const callbacks = {}
+        const iframe = window.parent
+
+        window.addEventListener('message', event => {
+          try {
+            const message = JSON.parse(event.data)
+            if (
+              // eslint-disable-next-line
+              message &&
+              // eslint-disable-next-line
+              message.callbackId &&
+              // eslint-disable-next-line
+              callbacks[callbackId] &&
+              callbacks[callbackId][message.type]
+            ) {
+              callbacks[callbackId][message.type](message.data)
+            }
+          } catch (e) {
+            //
+          }
+        })
+
+        const callMini = options => {
+          iframe.postMessage(
+            JSON.stringify({
+              from: 'xhsJSSDK',
+              data: options,
+            }),
+            '*',
+          )
+        }
+
+        const postMessage = (method, options = {}) => {
+          if (method === 'postMessage') {
+            callMini({ method, options })
+          } else {
+            callbackId += 1
+            const { success, fail, complete } = options
+            callbacks[callbackId] = { success, fail, complete }
+            iframe.postMessage(
+              JSON.stringify({
+                from: 'xhsJSSDK',
+                data: { method, options, callbackId },
+              }),
+              '*',
+            )
+          }
+        }
+
+        const miniProgram = {
+          navigateTo: options => {
+            postMessage('navigateTo', options)
+          },
+          navigateBack: options => {
+            postMessage('navigateBack', options)
+          },
+          switchTab: options => {
+            postMessage('switchTab', options)
+          },
+          reLaunch: options => {
+            postMessage('reLaunch', options)
+          },
+          redirectTo: options => {
+            postMessage('redirectTo', options)
+          },
+          getLocation: options => {
+            postMessage('getLocation', options)
+          },
+          postMessage: message => {
+            postMessage('postMessage', message)
+          },
+        }
+        const xhs = {
+          config: () => {
+            //
+          },
+          miniProgram,
+        }
+        Object.freeze(xhs)
+        window.xhs = xhs
+      }
+      init()
+    </script>
+    <script>
+      function getLocation() {
+        xhs.miniProgram.getLocation({
+          complete: res => {
+            console.log('getLocation:', res)
+          },
+        })
+      }
+    </script>
+  </body>
+</html>

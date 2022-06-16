@@ -1,0 +1,19 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'request'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <button size="mini" bindtap="makeRequest" type="primary" disabled="{{buttonDisabled}}">GET</button>
+    <button size="mini" bindtap="makeRequestOptions" type="primary" disabled="{{buttonDisabled}}">OPTIONS</button>
+    <button size="mini" bindtap="makeRequestPut" type="primary" disabled="{{buttonDisabled}}">PUT</button>
+    <button size="mini" bindtap="makeRequestDelete" type="primary" disabled="{{buttonDisabled}}">DELETE</button>
+    <button size="mini" bindtap="makeRequestPostFormData" type="primary" disabled="{{buttonDisabled}}">POSTFormData</button>
+    <button size="mini" bindtap="makeRequestTimeout" type="primary" disabled="{{buttonDisabled}}">Timeout</button>
+    <button size="mini" bindtap="makeRequestRequestArrayBuffer" type="primary" disabled="{{buttonDisabled}}">ReqArrayBuffer</button>
+    <button size="mini" bindtap="makeRequestResponseArrayBuffer" type="primary" disabled="{{buttonDisabled}}">ResArrayBuffer</button>
+    <button size="mini" bindtap="makeRequestPostForm" type="primary" disabled="{{buttonDisabled}}">POST www-form-urlencoded</button>
+  </view>
+  <template is="foot" />
+</view>

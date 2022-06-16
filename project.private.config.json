@@ -1,0 +1,16 @@
+{
+  "condition": {
+    "miniprogram": {
+      "current": 1648725461706,
+      "list": [
+        {
+          "id": 1648725461706,
+          "name": "page/component/pages/scroll-view/scroll-view",
+          "pathName": "page/component/pages/scroll-view/scroll-view",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

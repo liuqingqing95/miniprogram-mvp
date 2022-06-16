@@ -1,0 +1,14 @@
+@import '../../../common/lib/weui.css';
+
+.page-section {
+  margin-bottom: 10px;
+}
+
+.text-style {
+  background-color: yellow;
+  height: 80px;
+  width: 300px;
+}
+.inputChangeValue {
+  overflow: scroll;
+}

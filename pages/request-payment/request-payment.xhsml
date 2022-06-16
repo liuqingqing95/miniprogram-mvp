@@ -1,0 +1,35 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'requestPayment'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <button type="primary" bindtap="requestPayment">支付</button>
+  </view>
+  <view>
+    <label>payToken</label>
+    <input class="input" type="text" value="{{payToken}}" bindinput="handlePayToken" />
+  </view>
+  <view>
+    <label>orderId</label>
+    <input class="input" type="text" value="{{orderId}}" bindinput="handleOrderId" />
+  </view>
+  <view>
+    <label>payMethod</label>
+    <input class="input" type="text" value="{{payMethod}}" bindinput="handlePayMethod" />
+  </view>
+  <view>
+    <label>ext</label>
+    <input class="input" type="text" value="{{ext}}" bindinput="handleExt" />
+  </view>
+  <view>
+    <label>wxUrl</label>
+    <input class="input" type="text" value="{{wxUrl}}" bindinput="handleWxUrl" />
+  </view>
+  <view>
+    <label>zfbUrl</label>
+    <input class="input" type="text" value="{{zfbUrl}}" bindinput="handleZfbUrl" />
+  </view>
+  <template is="foot" />
+</view>

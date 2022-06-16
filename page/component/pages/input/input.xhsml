@@ -1,0 +1,215 @@
+<view class="container">
+  <view class="page-head">
+    <view class="page-head-title">input</view>
+    <view class="page-head-line"></view>
+    <view xhs:if="{{desc}}" class="page-head-desc">{{desc}}</view>
+  </view>
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">这是一个自动聚焦的input</view>
+      <view class="textarea-wrp">
+        <input style="color:green" 
+          class="weui-input text-style" 
+          value="{{inputChangeValue}}" 
+          type="{{type}}"
+          password="{{password}}" 
+          placeholder="{{placeholder}}" 
+          placeholder-style="{{placeholderStyle}}" 
+          placeholder-class="{{placeholderClass}}" 
+          disabled="{{disabled}}" maxlength="{{maxlength}}" 
+          focus="{{focus}}" 
+          auto-focus="true" 
+          cursor="{{cursor}}"
+          selection-start="{{selectionStart}}" 
+          selection-end="{{selectionEnd}}" 
+          data-name="zhangsan"
+          data-age="20"
+          bindfocus="bindTextFocus" 
+          bindblur="bindTextBlur" 
+          bindinput="bindTextInput" />
+      </view>
+    </view>
+    <view class="page-section" style="margin-top: 20px;margin-bottom: 120px;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">focusTime: {{focusTime}}</view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">blurTime: {{blurTime}}</view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd inputChangeValue">inputChangeValue: {{inputChangeValue}}</view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            类型
+            <text class="filed-tip">(type)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <radio-group bindchange="changeType" class="weui-cell">
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <radio value="text" checked="{{ type === 'text' }}" />
+                </view>
+                <view class="weui-cell__bd">text</view>
+              </label>
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <radio value="number" checked="{{ type === 'number' }}" />
+                </view>
+                <view class="weui-cell__bd">number</view>
+              </label>
+            </radio-group>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            是否是密码类型
+            <text class="filed-tip">(password)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <switch checked="{{password}}" bindchange="changePassword" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            值
+            <text class="filed-tip">(value)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{value}}" bindinput="changeValue" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            输入框为空时占位符
+            <text class="filed-tip">(placeholder)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{placeholder}}" bindinput="changePlaceholder" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            指定 placeholder 的样式
+            <text class="filed-tip">(placeholder-style)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{placeholderStyle}}" bindinput="changePlaceholderStyle" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            指定 placeholder 的样式类
+            <text class="filed-tip">(placeholder-class)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{placeholderClass}}" bindinput="changePlaceholderClass" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            是否禁用
+            <text class="filed-tip">(disabled)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <switch checked="{{disabled}}" bindchange="changeDisabled" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            最大输入长度
+            <text class="filed-tip">(maxlength)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" type="number" value="{{maxlength}}" bindinput="changeMaxlength" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            聚焦
+            <text class="filed-tip">(focus)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <switch checked="{{focus}}" bindchange="changeFocus" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            指定focus时的光标位置
+            <text class="filed-tip">(cursor)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" type="number" value="{{cursor}}" bindinput="changeCursor" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            光标起始位置
+            <text class="filed-tip">(selection-start)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" type="number" value="{{selectionStart}}" bindinput="changeSelectionStart" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            光标结束位置
+            <text class="filed-tip">(selection-end)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" type="number" value="{{selectionEnd}}" bindinput="changeSelectionEnd" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells__title">控制输入的input</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" bindinput="bindReplaceInput" placeholder="弹出value值" blur="true"/>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">控制键盘的input</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" bindinput="bindHideKeyboard" placeholder="输入123自动收起键盘" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">密码输入的input</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" password type="text" placeholder="这是一个密码输入框" />
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="weui-cells__title">bindchange</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" type="text" placeholder="bindchange" bindchange="onChange" />
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="weui-cells__title">bindconfirm</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" type="text" placeholder="bindconfirm" bindconfirm="bindconfirm" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <navigator class="page-foot" openType="switchTab" url="/page/component/index" hover-class="none">
+    <image class="icon-foot" src="../../../../image/icon_foot.png"></image>
+  </navigator>
+</view>

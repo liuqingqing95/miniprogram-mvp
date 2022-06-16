@@ -1,0 +1,157 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+<import src="../../../../pages/common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'scroll-view'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>
+          横向滚动 \n
+          scroll-left: 200 \n
+          showScrollbar: false \n
+          bindscrolltoupper \n
+          bindscrolltolower \n
+          scroll-y: true \n
+          scroll-x: true \n
+        </text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" showScrollbar="{{false}}" scroll-left="200" bindscrolltoupper="upperHorizontal" bindscrolltolower="lowerHorizontal" scroll-y scroll-x bindscroll="scroll" style="width: 100%">
+          <view id="demo1" class="scroll-view-item_H1 demo-text-1" style="height: {{dynamicHeight}}px"></view>
+          <view id="demo2" class="scroll-view-item_H1 demo-text-2" style="height: {{dynamicHeight}}px"></view>
+          <view id="demo3" class="scroll-view-item_H1 demo-text-3" style="height: {{dynamicHeight}}px"></view>
+          <view id="demo4" class="scroll-view-item_H1 demo-text-1" style="height: {{dynamicHeight}}px"></view>
+          <view id="demo5" class="scroll-view-item_H1 demo-text-2" style="height: {{dynamicHeight}}px"></view>
+          <view id="demo6" class="scroll-view-item_H1 demo-text-3" style="height: {{dynamicHeight}}px"></view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>
+          纵向滚动 \n
+          showScrollbar: true \n
+          scroll-y: true  \n
+          refresher-enabled: true \n
+          refresher-threshold: 80 \n
+          refresher-background: lightgreen \n
+        </text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view scroll-y showScrollbar="{{true}}" style="width: 100%; height: 400px;" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="none" refresher-background="lightgreen">
+          <view slot="refresher" class="refresh-container" style="display: block; width: 100%; height: 80px; background: #ECBDF0; display: flex; align-items: center;">
+            <view class="view1" style="position: absolute; color: white; text-align: center; width: 100%;">下拉刷新</view>
+          </view>
+          <view id="demo1" class="scroll-view-item_V demo-text-1"></view>
+          <view id="demo2" class="scroll-view-item_V demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item_V demo-text-3"></view>
+          <view id="demo4" class="scroll-view-item_V demo-text-1"></view>
+          <view id="demo5" class="scroll-view-item_V demo-text-2"></view>
+          <view id="demo6" class="scroll-view-item_V demo-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>
+          scroll-y: true \n
+          refresher-enabled: true \n
+          refresher-threshold: 100 \n
+          refresher-default-style: "white" \n
+          refresher-background: "lightgreen" \n
+          refresher-triggered: 触发 \n
+          bindrefresherpulling： 触发 \n
+          bindrefresherrefresh：触发 \n
+          bindrefresherrestore：触发 \n
+          bindrefresherabort：触发 \n
+          scroll-top="100" \n
+        </text>
+      </view>
+      <view class="page-section-spacing">
+        <template is="status" data="{{apiData}}" />
+        <scroll-view
+          scroll-y
+          style="width: 100%; height: 400px;"
+          scroll-top="100"
+          refresher-enabled="{{true}}"
+          refresher-threshold="{{100}}"
+          refresher-default-style="white"
+          refresher-background="lightgreen"
+          refresher-triggered="{{triggered}}"
+          bindrefresherpulling="onPulling"
+          bindrefresherrefresh="onRefresh"
+          bindrefresherrestore="onRestore"
+          bindrefresherabort="onAbort"
+        >
+          <view id="demo1" class="scroll-view-item_V demo-text-1"></view>
+          <view id="demo2" class="scroll-view-item_V demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item_V demo-text-3"></view>
+          <view id="demo4" class="scroll-view-item_V demo-text-1"></view>
+          <view id="demo5" class="scroll-view-item_V demo-text-2"></view>
+          <view id="demo6" class="scroll-view-item_V demo-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>
+          scroll-y="true" \n
+          bindscrolltoupper 触发 \n
+          bindscrolltolower 触发 \n
+          bindscroll 触发 \n
+          scroll-into-view 触发 滚动到B \n
+        </text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view scroll-y="true" style="height: 150px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="#case1Demo2">
+          <view id="demo1" class="scroll-view-item demo-text-1"></view>
+          <view id="case1Demo2" class="scroll-view-item demo-text-2"></view>
+          <view id="case1Demo3" class="scroll-view-item demo-text-3"></view>
+          <view id="demo4" class="scroll-view-item demo-text-1"></view>
+          <view id="case1Demo5" class="scroll-view-item demo-text-2"></view>
+          <view id="case1Demo6" class="scroll-view-item demo-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>
+          enable-flex
+        </text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view
+          scroll-y="true"
+          enable-flex="true"
+          class="enable-flex-demo"
+        >
+          <view id="demo1" class="scroll-view-item demo-text-1"></view>
+          <view id="case1Demo2" class="scroll-view-item demo-text-2"></view>
+          <view id="case1Demo3" class="scroll-view-item demo-text-3"></view>
+          <view id="demo4" class="scroll-view-item demo-text-1"></view>
+          <view id="case1Demo5" class="scroll-view-item demo-text-2"></view>
+          <view id="case1Demo6" class="scroll-view-item demo-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="page-section-spacing">
+        <scroll-view
+          enable-flex="true"
+          class="scroll-view-demo"
+          scroll-x
+          scroll-y
+        >
+          <view class="item" xhs:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14]}}" xhs:key="{{index}}">
+              {{item}}
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

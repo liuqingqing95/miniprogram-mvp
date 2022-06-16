@@ -1,0 +1,5 @@
+<web-view 
+bindload="handleLoad"
+binderror="handleError"
+bindmessage="handleMessage"
+src="https://fe-video-qc.xhscdn.com/fe-platform/fcb3f3037b59933b17ac5a9122ebc2398d1bf6b5.html"></web-view>

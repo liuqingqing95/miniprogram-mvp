@@ -1,0 +1,25 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'modal'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="btn-area">
+      <input type="text" placeholder="title" class="title-input" bindinput="handleTitleInput" />
+      <input type="text" placeholder="content" class="title-input" bindinput="handleContentInput" />
+      <button type="default" bindtap="noTitlemodalTap">无标题</button>
+      <button type="default" bindtap="modalTap">有标题</button>
+      <button type="default" bindtap="modalTap1">不显示取消按钮</button>
+      <input type="text" placeholder="cancelText" class="title-input" bindinput="handleCancelTextInput" />
+      <button type="default" bindtap="modalTap2">取消按钮文字</button>
+      <input type="text" placeholder="cancelTextColor" class="title-input" bindinput="handleCancelTextColorInput" />
+      <button type="default" bindtap="modalTap3">取消按钮文字颜色</button>
+      <button type="default" bindtap="modalTap4">确认按钮文字</button>
+      <button type="default" bindtap="modalTap5">确认按钮文字颜色</button>
+      <button type="default" bindtap="modalTap6">显示输入框</button>
+      <button type="default" bindtap="modalTap7">显示输入框提示文字</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

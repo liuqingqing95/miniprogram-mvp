@@ -1,0 +1,13 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'getUserInfo'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取用户信息</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

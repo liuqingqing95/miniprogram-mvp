@@ -1,0 +1,29 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'toast'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="btn-area">
+      <view class="body-view">
+        <button type="default" bindtap="toast1Tap">点击弹出默认toast(无ICON，无Image)</button>
+      </view>
+      <view class="body-view">
+        <input type="text" class="input" placeholder="设置duration" bindinput="handleDuration" />
+        <button type="default" bindtap="toast2Tap">点击弹出设置duration的toast</button>
+      </view>
+      <view class="body-view">
+        <button type="default" bindtap="toast3Tap">点击弹出显示icon的toast</button>
+        <button type="default" bindtap="toast4Tap">点击弹出显示image的toast</button>
+        <button type="default" bindtap="toast6Tap">点击弹出显示image & icon 的toast</button>
+        <button type="default" bindtap="toast5Tap">点击弹出显示mask的toast</button>
+        <button type="default" bindtap="toast7Tap">点击title显示表情</button>
+      </view>
+      <view class="body-view">
+        <button type="default" bindtap="hideToast">点击隐藏toast</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

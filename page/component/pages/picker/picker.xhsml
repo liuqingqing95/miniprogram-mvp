@@ -1,0 +1,119 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'picker'}}" />
+  <view class="page-body">
+    <view class="section">
+      <view class="section__title">普通选择器</view>
+      <view>
+        <text class="filed-tip">mode: selector / range: Array / value: 中国</text>
+      </view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" disabled="{{disabled}}" header-text="{{headerText}}" bindcancel="onCacnel">
+        <view class="picker">当前选择bindchange：{{array[index]}}</view>
+      </picker>
+      <view>
+        <text class="filed-tip">mode: selector / range: Object / ran-key: name / value: 中国</text>
+      </view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{arrayObject}}" range-key="name" disabled="{{disabled}}" header-text="{{headerText}}" bindcancel="onCacnel">
+        <view class="picker">当前选择bindchange：{{array[index]}}</view>
+      </picker>
+      <view class="page-section" style="margin-top: 20px;margin-bottom: 20px;">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">
+              点击取消事件
+              <text class="filed-tip">(bindcancel)</text>
+            </view>
+            <view class="weui-cell__ft">{{cancelTime}}</view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">
+              是否禁用
+              <text class="filed-tip">(disabled)</text>
+            </view>
+            <view class="weui-cell__ft">
+              <switch checked="{{disabled}}" bindchange="changeDisabled" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">
+            选择器的标题
+            <text class="filed-tip">(header-text)</text>
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{headerText}}" bindinput="changeHeaderText" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="section" style="margin-bottom:20px;">
+      <view class="section__title">多列选择器</view>
+      <view>
+        <text class="filed-tip">mode: multiSelector / range: Array / value: [1, 0, 1]</text>
+      </view>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" bindcancel="onCacnel">
+        <view class="picker">当前选择bindchange：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}</view>
+      </picker>
+      <view>
+        <text class="filed-tip">mode: multiSelector / range: Object / ran-key: name / value: [1, 0, 1]</text>
+      </view>
+      <view>
+        <text class="filed-tip">此demo联动逻辑是通过 bindcolumnchange 事件实现</text>
+      </view>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{objectMultiArray}}" range-key="name" bindcancel="onCacnel">
+        <view class="picker">当前选择bindchange：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}</view>
+      </picker>
+    </view>
+    <view class="section" style="margin-bottom:20px;">
+      <view class="section__title">时间选择器</view>
+      <view>
+        <text class="filed-tip">mode: time / start: 09:01 / end: 21:01 / value: 12: 01</text>
+      </view>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange" bindcancel="onCacnel">
+        <view class="picker" style="margin-bottom:20px;">当前选择bindchange: {{time}}</view>
+      </picker>
+
+      <picker mode="time" value="{{time}}" bindchange="bindTimeChange" bindcancel="onCacnel">
+        <view class="picker" style="margin-bottom:20px;">当前选择bindchange: {{time}}</view>
+      </picker>
+    </view>
+    <view class="section">
+      <view class="section__title">日期选择器</view>
+      <view>
+        <text class="filed-tip">mode: date / fields: day / start: 2015-09-01 / end: 2017-09-01 / value: 2016-09-01</text>
+      </view>
+
+      <picker mode="date" fields="day" value="{{date}}" bindchange="bindDateChange" bindcancel="onCacnel">
+        <view class="picker" style="margin-bottom:20px;">当前选择bindchange: {{date}}</view>
+      </picker>
+      <picker mode="date" fields="day" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange" bindcancel="onCacnel">
+        <view class="picker" style="margin-bottom:20px;">当前选择bindchange: {{date}}</view>
+      </picker>
+      <view>
+        <text class="filed-tip">mode: date / fields: month / start: 2015-09 / end: 2017-09 / value: 2016-09</text>
+      </view>
+      <picker mode="date" fields="month" value="{{month}}" start="2015-09" end="2017-09" bindchange="bindMonthChange" bindcancel="onCacnel">
+        <view class="picker" style="margin-bottom:20px;">当前选择bindchange: {{month}}</view>
+      </picker>
+      <view>
+        <text class="filed-tip">mode: date / fields: year / start: 2015 / end: 2017 / value: 2016</text>
+      </view>
+      <picker mode="date" fields="year" value="{{year}}" start="2015" end="2017" bindchange="bindYearChange" bindcancel="onCacnel">
+        <view class="picker" style="margin-bottom:20px;">当前选择bindchange: {{year}}</view>
+      </picker>
+    </view>
+    <view class="section">
+      <view class="section__title">省市区选择器</view>
+      <view>
+        <text class="filed-tip">mode: region / custom-item: 全部 / value: '广东省', '广州市', '海珠区'</text>
+      </view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" bindcancel="onCacnel">
+        <view class="picker">当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+      </picker>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

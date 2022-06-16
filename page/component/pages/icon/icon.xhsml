@@ -1,0 +1,153 @@
+<import src="../../../common/head.xhsml"/>
+<import src="../../../common/foot.xhsml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'icon', desc: 'i am desc'}}"/>
+
+  <view class="page-section page-section-spacing">
+    <icon class="icon-box-img" type="{{type}}" size="{{size}}" color="{{color}}"></icon>
+  </view>
+  <view class="page-section" style="margin-top: 20px;margin-bottom: 20px;">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">可选type: <text class="filed-tip">(success / success_no_circle / info / circle / info_circle / warn / waiting / cancel / download / search / clear)</text></view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">类型 <text class="filed-tip">(type)</text></view>
+        <view class="weui-cell__ft" style="flex:1">
+          <input class="weui-input" value="{{type}}" bindinput="changeType" />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">颜色 <text class="filed-tip">(color)</text></view>
+        <view class="weui-cell__ft" style="flex:1">
+          <input class="weui-input" value="{{color}}" bindinput="changeColor" />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">尺寸 <text class="filed-tip">(size)</text></view>
+        <view class="weui-cell__ft" style="flex:1">
+          <input class="weui-input" value="{{size}}" bindinput="changeSize" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="icon-box">
+    <icon class="icon-box-img" type="success" size="93"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">成功<text class="filed-tip">(success)</text></view>
+      <view class="icon-box-desc">用于表示操作顺利完成</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <icon class="icon-box-img" type="info" size="93"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">提示<text class="filed-tip">(info)</text></view>
+      <view class="icon-box-desc">用于表示信息提示；也常用于缺乏条件的操作拦截，提示用户所需信息</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <icon class="icon-box-img" type="warn" size="93" color="#C9C9C9"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">普通警告<text class="filed-tip">(warn)</text></view>
+      <view class="icon-box-desc">用于表示操作后将引起一定后果的情况；也用于表示由于系统原因而造成的负向结果</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <icon class="icon-box-img" type="warn" size="93"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">强烈警告<text class="filed-tip">(warn)</text></view>
+      <view class="icon-box-desc">用于表示由于用户原因造成的负向结果；也用于表示操作后将引起不可挽回的严重后果的情况</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <icon class="icon-box-img" type="waiting" size="93"></icon>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">等待<text class="filed-tip">(waiting)</text></view>
+      <view class="icon-box-desc">用于表示等待，告知用户结果需等待</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="success_no_circle" size="23"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">多选控件图标_已选择<text class="filed-tip">(success_no_circle)</text></view>
+      <view class="icon-box-desc">用于多选控件中，表示已选择该项目</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="circle" size="23"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">多选控件图标_未选择<text class="filed-tip">(circle)</text></view>
+      <view class="icon-box-desc">用于多选控件中，表示该项目可被选择，但还未选择</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="warn" size="23"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">错误提示<text class="filed-tip">(warn)</text></view>
+      <view class="icon-box-desc">用于在表单中表示出现错误</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="success" size="23"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">单选控件图标_已选择<text class="filed-tip">(success)</text></view>
+      <view class="icon-box-desc">用于单选控件中，表示已选择该项目</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="download" size="23"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">下载<text class="filed-tip">(download)</text></view>
+      <view class="icon-box-desc">用于表示可下载</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="info_circle" size="23"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">提示<text class="filed-tip">(info_circle)</text></view>
+      <view class="icon-box-desc">用于在表单中表示有信息提示</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="cancel" size="23"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">停止或关闭<text class="filed-tip">(cancel)</text></view>
+      <view class="icon-box-desc">用于在表单中，表示关闭或停止</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-small-wrp">
+      <icon class="icon-small" type="search" size="14"></icon>
+    </view>
+    <view class="icon-box-ctn">
+      <view class="icon-box-title">搜索<text class="filed-tip">(search)</text></view>
+      <view class="icon-box-desc">用于搜索控件中，表示可搜索</view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

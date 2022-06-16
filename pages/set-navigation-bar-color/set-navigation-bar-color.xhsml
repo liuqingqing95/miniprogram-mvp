@@ -1,0 +1,17 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'setNaivgationBarColor'}}" />
+  <template is="status" data="{{apiData}}" />
+  <div class="page-body">
+    <view class="btn-area">
+      <input class="input" type="text" placeholder="frontColor" bindInput="handleFrontColor" />
+      <input class="input" type="text" placeholder="backgroundColor" bindInput="handleBackgroundColor" />
+      <button type="primary" bindtap="setNavigationBarColor1">设置前景颜色值</button>
+      <button type="primary" bindtap="setNavigationBarColor3">设置动画</button>
+      <button type="primary" bindtap="fail">失败</button>
+    </view>
+  </div>
+  <template is="foot" />
+</view>

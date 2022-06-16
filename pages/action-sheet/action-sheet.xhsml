@@ -1,0 +1,18 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'action-sheet'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="btn-area">
+      <input type="text" placeholder="警示文案" class="input" bindinput="handleAlertText" />
+      <input type="text" placeholder="itemColor: #ff0000" class="input" bindinput="handleItemColor" />
+      <input type="text" placeholder="itemList长度" class="input" bindinput="handleItemListLength" />
+      <button type="default" bindtap="actionSheetTap">弹出action sheet</button>
+      <button type="default" bindtap="actionSheetTapAlertText">警示文案</button>
+      <button type="default" bindtap="actionSheetTapColor">Color</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

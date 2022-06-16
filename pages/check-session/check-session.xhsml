@@ -1,0 +1,13 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'Login'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <button class="page-body-button" type="primary" bindtap="checkSession">检查登录状态</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

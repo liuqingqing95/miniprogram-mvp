@@ -1,0 +1,47 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'picker-view'}}"/>
+
+  <view class="page-body">
+    <picker-view
+      indicator-style="{{indicatorStyle}}"
+      mask-style="{{maskStyle}}"
+      style="width: 100%; height: 300px;"
+      value="{{value}}"
+      bindchange="bindChange"
+      bindpickstart="bindpickstart"
+      bindpickend="bindpickend"
+
+    >
+      <picker-view-column>
+        <view xhs:for="{{years}}" style="line-height: 50px; text-align: center;color:black;">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view xhs:for="{{months}}" style="line-height: 50px; text-align: center;color:black;">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <block  xhs:for="{{daysMap[value[1]] || days}}">
+          <view style="line-height: 50px; text-align: center;color:black;">{{item}}日</view>
+        </block>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="icon-container">
+          <image class="picker-icon" src="../../resources/kind/daytime.png" />
+        </view>
+        <view class="icon-container">
+          <image class="picker-icon" src="../../resources/kind/night.png" />
+        </view>
+      </picker-view-column>
+    </picker-view>
+    <view>bindchange: {{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</view>
+    <view>bindpickstartTime: {{bindpickstartTime}}</view>
+    <view>bindpickendTime: {{bindpickendTime}}</view>
+    <button bindtap="setDefaultValue">设置defaultValue to: [1, 1, 1]</button>
+    <button bindtap="setChangeIndicatorHeight">设置 indicator-style to: height: 70px</button>
+    <button bindtap="setChangeMaskStyle">设置 mask-style to: background-image: none</button>
+  </view>
+
+  <template is="foot" />
+</view>

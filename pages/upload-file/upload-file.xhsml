@@ -1,0 +1,27 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'uploadFile'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-body-info">
+        <block xhs:if="{{imageSrc}}">
+          <image src="{{imageSrc}}" class="image" mode="aspectFit"></image>
+        </block>
+        <block xhs:else>
+          <view class="image-plus image-plus-nb" bindtap="chooseImage">
+            <view class="image-plus-horizontal"></view>
+            <view class="image-plus-vertical"></view>
+          </view>
+          <view class="image-plus-text">选择图片</view>
+        </block>
+        <button bindtap="abortHandle">abort</button>
+        <button bindtap="offProgressUpdateUploadTask">offProgressUpdateUploadTask</button>
+        <button bindtap="offHeadersReceived">offHeadersReceived</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

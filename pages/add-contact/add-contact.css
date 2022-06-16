@@ -1,0 +1,5 @@
+@import '../common/lib/weui.css';
+
+input {
+  width: 100%;
+}

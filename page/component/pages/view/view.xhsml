@@ -1,0 +1,174 @@
+<view class="container">
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>flex-direction: row\n横向布局</text>
+      </view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1"></view>
+          <view class="flex-item demo-text-2"></view>
+          <view class="flex-item demo-text-3"></view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>flex-direction: column\n纵向布局</text>
+      </view>
+      <view class="flex-wrp" style="flex-direction:column;">
+        <view class="flex-item flex-item-V demo-text-1"></view>
+        <view class="flex-item flex-item-V demo-text-2"></view>
+        <view class="flex-item flex-item-V demo-text-3"></view>
+      </view>
+    </view>
+
+    <view class="page-section" style="margin-bottom:120px;">
+      <view class="page-section-title">
+        <text>hover-class、hover-start-time、hover-stay-time</text>
+      </view>
+      <view>
+        <view
+          class="flex-item flex-item-V demo-text-1"
+          hover-class="new-hover-class"
+          hover-start-time="{{hoverStartTime}}"
+          hover-stay-time="{{hoverStayTime}}"
+        ></view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">按住后多久出现点击态，单位毫秒 <text class="filed-tip">(hoverStartTime)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{hoverStartTime}}" bindinput="changeHoverStartTime" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">手指松开后点击态保留时间，单位毫秒 <text class="filed-tip">(hoverStayTime)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{hoverStayTime}}" bindinput="changeHoverStayTime" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>hover-stop-propagation</text>
+      </view>
+      <view>
+        <view class="outer-org" hover-class="outer">
+          outer
+          <view class="middle-org" hover-class="middle">
+            middle
+            <view class="inner-org" hover-stop-propagation="{{hoverStopPropagation}}" hover-class="inner">
+              inner
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section" style="margin: 20px 0 120px 0">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">是否阻止inner元素的祖先节点出现点击状态 <text class="filed-tip">(hover-stop-propagation)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{hoverStopPropagation}}" bindchange="changeHoverStopPropagation" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view
+  id="outer"
+  class="page-section" style="margin: 20px 0 120px 0"
+    bindtap="tap1"
+  >
+    outer bindtap
+    <view
+      id="middle"
+      catchtap="tap2">
+      middle  catchtap
+      <view bindtap="tap3" id="inner">
+        inner bindtap
+      </view>
+    </view>
+  </view>
+
+  <view
+    class="page-section" style="margin: 20px 0 120px 0"
+    bindtouchmove="touchmove"
+    bindtouchend="touchend"
+    bindtouchstart="touchstart"
+    bindtap="tap"
+    id="outer"
+  >
+    outer bindtouchmove bindtouchend bindtouchstart bindtap
+    <view catchtap="catchtap" id="inner">
+      inner catchtap
+    </view>
+  </view>
+
+    <view
+    class="page-section" style="margin: 20px 0 120px 0"
+    bindtouchmove="touchmove"
+    bindtouchend="touchend"
+    bindtouchstart="touchstart"
+    bindtap="tap"
+    id="outer"
+  >
+    outer bindtouchmove bindtouchend bindtouchstart bindtap
+    <view catchtouchend="catchtouchend" id="inner">
+      inner catchtouchend
+    </view>
+  </view>
+
+
+  <view
+    class="page-section" style="margin: 20px 0 120px 0"
+    bindtap="tap"
+    id="outer"
+  >
+    outer
+
+    <view
+      class="page-section" style="margin: 20px 0 120px 0"
+      id="middle"
+    >
+      middle trigger outer bindtap
+    </view>
+
+    <view class="page-section" style="margin: 20px 0 120px 0" catchtap="catchtap" id="inner" bindlongtap="bindlongtap">
+      inner catchtap
+    </view>
+  </view>
+
+  <view
+    id="outer"
+    class="page-section" style="margin: 20px 0 120px 0"
+    bindtouchmove="bindtouchmove1"
+  >
+    outer bindtouchmove
+    <view
+      id="middle"
+      catchtouchmove="catchtouchmove2"
+    >
+      middle  catchtouchmove
+      <view bindtouchmove="bindtouchmove3" id="inner">
+        inner bindtouchmove
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <button bind:tap="showModal" data-tedd="{{ { tap: { en: 'showIt', et: 'on', args: [] } } }}">点我点我</button>
+    <view xhs:if="{{show}}" catch:touchmove="catchMove1" data-tedd="{{ { touchmove: { en: 'true', et: 'stop', args: [] } } }}">
+        <view catch:touchmove="catchMove2" style="position: fixed;top: 0px;left: 0px; width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.7);z-index: 100;">遮罩层</view>
+        <view style="background-color:#AAA;width:100%;height:80vh;overflow:auto;position: fixed;left:0px;bottom:0px;z-index: 100;">
+            <button bind:tap="closeModal" data-tedd="{{ { tap: { en: 'hideIt', et: 'on', args: [] } } }}">点我关闭</button>
+            <view style="width:100%;height:200%;">弹层内容</view>
+        </view>
+    </view>
+  </view>
+</view>

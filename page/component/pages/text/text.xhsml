@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="page-head">
+    <view class="page-head-title">text</view>
+    <view class="page-head-line"></view>
+    <view xhs:if="{{desc}}" class="page-head-desc">{{desc}}</view>
+  </view>
+
+  <view>
+    <text>no space props {{spaceText}}    \n</text>
+    <text space="emsp">emsp {{spaceText}}    \n</text>
+    <text space="nbsp">nbsp {{spaceText}}    \n</text>
+    <text space="ensp">ensp {{spaceText}}    \n</text>
+  </view>
+  <view>
+    <text>默认转义：&nbsp;&ensp;&emsp;&quot;&apos;&amp;&lt;&gt;\n</text>
+    <text> ===== \n</text>
+    <text>不转义 data 里的： {{decodeText}} \n</text>
+    <text> ## decode ### \n</text>
+    <text decode>&nbsp;&ensp;&emsp;&quot;&apos;&amp;&lt;&gt; \n</text>
+    <text> ===== \n</text>
+    <text decode>转义 data 里的 {{decodeText}}</text>
+  </view>
+  <view class="page-body">
+    <view class="page-section page-section-spacing">
+      <view class="text-box" scroll-y="true" scroll-top="{{scrollTop}}">
+        <text>{{text}}</text>
+      </view>
+      <button disabled="{{!canAdd}}" bindtap="add">add line</button>
+      <button disabled="{{!canRemove}}" bindtap="remove">remove line</button>
+    </view>
+  </view>
+
+  <navigator class="page-foot" openType="switchTab" url="/page/component/index" hover-class="none">
+    <image class="icon-foot" src="../../../../image/icon_foot.png"></image>
+  </navigator>
+</view>

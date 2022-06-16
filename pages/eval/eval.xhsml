@@ -1,0 +1,14 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'eval'}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <text>
+        {{value}}
+      </text>
+      <button bindtap="handle">执行eval</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

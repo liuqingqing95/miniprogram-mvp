@@ -1,0 +1,7 @@
+@import '../../../common/lib/weui.css';
+
+.picker {
+  padding: 10px 13px;
+  background-color: #ffffff;
+  color: black;
+}

@@ -1,0 +1,17 @@
+<view class="apipan">
+  <view>
+    <text>
+      success: {{success}}
+    </text>
+  </view>
+  <view>
+    <text>
+      fail: {{fail}}
+    </text>
+  </view>
+  <view>
+    <text>
+      complete: {{complete}}
+    </text>
+  </view>
+</view>

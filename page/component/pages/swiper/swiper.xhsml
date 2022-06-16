@@ -1,0 +1,135 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'swiper'}}"/>
+
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        current="{{current}}"
+        vertical="{{vertical}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        indicator-color="{{indicatorColor}}"
+        indicator-active-color="{{indicatorActiveColor}}"
+        previous-margin="10px"
+        next-margin="40rpx"
+        bindchange="onChange"
+      >
+        <block xhs:for="{{background}}" xhs:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+       <swiper
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        current="{{current}}"
+        vertical="{{vertical}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        indicator-color="{{indicatorColor}}"
+        indicator-active-color="{{indicatorActiveColor}}"
+        previous-margin="10px"
+        next-margin="40rpx"
+        bindchange="onChange"
+      >
+        <block xhs:for="{{background}}" xhs:key="*this">
+          <swiper-item>
+             <image class="image-custom" src="{{src}}" lazy-load="true" />
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <swiper
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        current="{{current}}"
+        vertical="{{vertical}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        indicator-color="{{indicatorColor}}"
+        indicator-active-color="{{indicatorActiveColor}}"
+        previous-margin="10px"
+        next-margin="40rpx"
+        bindchange="onChange"
+      >
+        <block xhs:for="{{background}}" xhs:key="*this">
+          <swiper-item>
+              <video id="myVideo" autoplay="{{true}}" style="height:{{height}}px" src="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4"></video>
+          </swiper-item>
+        </block>
+      </swiper>
+
+    </view>
+    <view class="page-section" style="margin-top: 20px;margin-bottom: 0;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">指示点 <text class="filed-tip">(indicator-dots)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{indicatorDots}}" bindchange="changeIndicatorDots" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">自动播放 <text class="filed-tip">(autoplay)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{autoplay}}" bindchange="changeAutoplay" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">是否循环播放 <text class="filed-tip">(circular)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{circular}}" bindchange="changeCircular" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">是否垂直 <text class="filed-tip">(vertical)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{vertical}}" bindchange="changeVertical" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">当前所在滑块的 index <text class="filed-tip">(current)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" type="number" value="{{current}}" bindinput="changeCurrent" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">指示点颜色 <text class="filed-tip">(indicatorColor)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{indicatorColor}}" bindinput="changeIndicatorColor" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">当前选中的指示点颜色 <text class="filed-tip">(indicatorActiveColor)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{indicatorActiveColor}}" bindinput="changeIndicatorActiveColor" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section page-section-spacing">
+      <view class="page-section-title">
+        <text>幻灯片切换时长(ms) <text class="filed-tip">(duration)</text></text>
+        <text class="info">{{duration}}</text>
+      </view>
+      <slider bindchange="durationChange" value="{{duration}}" min="500" max="2000"/>
+      <view class="page-section-title">
+        <text>自动播放间隔时长(ms) <text class="filed-tip">(interval)</text></text>
+        <text class="info">{{interval}}</text>
+      </view>
+      <slider bindchange="intervalChange" value="{{interval}}" min="2000" max="10000"/>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

@@ -1,0 +1,12 @@
+.page-body image {
+  width: 300px;
+  height: 300px;
+
+  margin: 0 38px;
+}
+.input {
+  height: 50px;
+  background-color: white;
+  border: 1px solid red;
+  color: black;
+}

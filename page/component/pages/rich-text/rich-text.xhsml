@@ -1,0 +1,36 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'rich-text'}}"/>
+
+  <view class="page-body">
+    <view>
+      <rich-text nodes="{{rt1}}"></rich-text>
+    </view>
+
+    <view class="page-section">
+      <view class="page-section-title">通过HTML String渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{htmlSnip}}</scroll-view>
+        <button type="primary" bindtap="renderHtml">渲染HTML</button>
+        <block xhs:if="{{renderedByHtml}}">
+          <rich-text nodes="{{htmlSnip}}"></rich-text>
+        </block>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="page-section-title">通过节点渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{nodeSnip}}</scroll-view>
+        <button type="primary" bindtap="renderNode">渲染Node</button>
+        <block xhs:if="{{renderedByNode}}">
+          <rich-text nodes="{{nodes}}"></rich-text>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

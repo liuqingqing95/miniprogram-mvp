@@ -1,0 +1,20 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'setTabBarItem'}}" />
+  <template is="status" data="{{apiData}}" />
+  <div class="page-body">
+    <view class="btn-area">
+      <input class="input" type="text" placeholder="index" />
+      <input class="input" type="text" placeholder="text" />
+      <input class="input" type="text" placeholder="iconPath" />
+      <input class="input" type="text" placeholder="selectedIconPath" />
+      <button type="primary" bindtap="showTabBar">showTabBar</button>
+      <button type="primary" bindtap="setTabBarItem">设置</button>
+      <button type="primary" bindtap="hideTabBar">hideTabBar无动画</button>
+      <button type="primary" bindtap="hideTabBarAnimate">hideTabBar有动画</button>
+    </view>
+  </div>
+  <template is="foot" />
+</view>

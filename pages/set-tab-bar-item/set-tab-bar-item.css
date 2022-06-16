@@ -1,0 +1,9 @@
+@import '../common/lib/weui.css';
+
+.weui-label {
+  width: 5em;
+}
+.input {
+  height: 40px;
+  padding: 10px;
+}

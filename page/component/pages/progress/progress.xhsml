@@ -1,0 +1,121 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'progress'}}"/>
+
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+        <view class="progress-box">
+          <progress percent="20" show-info stroke-width="3"/>
+        </view>
+
+        <view class="progress-box">
+          <progress percent="40" active stroke-width="3" />
+          <icon class="progress-cancel" type="cancel"></icon>
+        </view>
+
+        <view class="progress-box">
+          <progress percent="60" active stroke-width="3" />
+        </view>
+
+        <view class="progress-box">
+          <progress percent="80" color="#10AEFF" active stroke-width="3" />
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section page-section-spacing">
+      <progress
+        percent="{{percent}}"
+        show-info="{{showInfo}}"
+        border-radius="{{borderRadius}}"
+        font-size="{{fontSize}}"
+        stroke-width="{{strokeWidth}}"
+        active-color="{{activeColor}}"
+        background-color="{{backgroundColor}}"
+        active="{{active}}"
+        active-mode="{{ activeMode === true ? 'forwards' : 'backwards' }}"
+        duration="{{duration}}"
+        bindactiveend="changeActiveend"
+      />
+    </view>
+
+    <view class="page-section" style="margin-top: 20px;margin-bottom: 120px;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">百分比 <text class="filed-tip">(percent)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{tmpPercent}}" bindinput="changeTmpPercent" />
+          </view>
+          <view class="weui-cell__ft" style="flex:1">
+            <button class="mini-btn" type="primary" size="mini" bindtap="confirmChangePercent">确定</button>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">展示右侧显示百分比 <text class="filed-tip">(show-info)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{showInfo}}" bindchange="changeShowInfo" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">圆角大小 <text class="filed-tip">(border-radius)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{borderRadius}}" bindinput="changeBorderRadius" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">字体大小 <text class="filed-tip">(font-size)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{fontSize}}" bindinput="changeFontSize" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">进度条线的宽度 <text class="filed-tip">(stroke-width)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{strokeWidth}}" bindinput="changeStrokeWidth" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">进度条颜色 <text class="filed-tip">(activeColor)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{activeColor}}" bindinput="changeActiveColor" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">未选择的进度条的颜色 <text class="filed-tip">(backgroundColor)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{backgroundColor}}" bindinput="changeBackgroundColor" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">进度条从左往右的动画 <text class="filed-tip">(active)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{active}}" bindchange="changeActive" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">动画从头播：false / 动画从上次结束点接着播 true <text class="filed-tip">(active-mode: backwards / forwards)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{activeMode}}" bindchange="changeActiveMode" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">进度增加1%所需毫秒数 <text class="filed-tip">(duration)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{duration}}" bindinput="changeDuration" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">动画完成事件 <text class="filed-tip">(bindactiveend)</text></view>
+        </view>
+        <view class="textarea-wrp">
+          <textarea value="{{activeend}}" style="height: 300px;font-size:11px" />
+        </view>
+      </view>
+    </view>
+
+
+
+  <template is="foot" />
+</view>

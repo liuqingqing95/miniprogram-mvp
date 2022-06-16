@@ -1,0 +1,12 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+<import src="../../../../pages/common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: '新建的页面'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view bindtap="switchTab">switchTab 至 Tab 页面（API）</view>
+  <view bindtap="reLaunch">reLaunch 至 Tab 页面（component）</view>
+  <view bindtap="redirectTo">redirectTo</view>
+  <view bindtap="navigateBack">返回至 Tab 页面（component）</view>
+  <view bindtap="navigateTo">navigateTo</view>
+</view>

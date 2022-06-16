@@ -1,0 +1,13 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'scanCode'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="btn-area">
+      <button type="primary" bindtap="scanCode">扫一扫</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

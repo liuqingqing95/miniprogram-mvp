@@ -1,0 +1,22 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'lifecycle'}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <view>
+        <text>load:{{load}}</text>
+      </view>
+      <view>
+        <text>show:{{show}}</text>
+      </view>
+      <view>
+        <text>hide:{{hide}}</text>
+      </view>
+      <view>
+        <text>unload:{{unload}}</text>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

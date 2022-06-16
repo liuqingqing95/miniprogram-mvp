@@ -1,0 +1,6 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+
+<view class="container">
+  <template is="head" data="{{title: '当前页'}}"/>
+</view>

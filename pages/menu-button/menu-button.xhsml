@@ -1,0 +1,11 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'Login'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <button bindtap="getMenuButtonBoundingClientRect">getMenuButtonBoundingClientRect</button>
+  </view>
+  <template is="foot" />
+</view>

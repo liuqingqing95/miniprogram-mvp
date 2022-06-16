@@ -1,0 +1,20 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'open/get/Setting'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <form>
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title"></view>
+      </view>
+    </form>
+    <view class="btn-area">
+      <button type="primary" bindtap="getSetting">获取小程序设置</button>
+      <button bindtap="openSetting" type="default">打开小程序设置</button>
+      <button type="primary" bindtap="authorize">获取小程序设置</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

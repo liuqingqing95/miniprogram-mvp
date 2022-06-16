@@ -1,0 +1,29 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'onShareAppMessage'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="flex-row">
+      <label for="">title \n</label>
+      <input class="input" type="text" value="{{shareData.title}}" bindinput="handleTitle" />
+    </view>
+    <view class="flex-row">
+      <label for="">imageUrl \n</label>
+      <input class="input" type="text" value="{{shareData.imageUrl}}" bindinput="handleImageUrl" />
+    </view>
+    <view class="flex-row">
+      <label for="">webviewUrl \n</label>
+      <input class="input" type="text" value="{{shareData.imageUrl}}" bindinput="handleImageUrl" />
+    </view>
+    <view class="flex-row">
+      <label for="">promise \n</label>
+      <switch class="" checked="{{promise}}" type="switch" bindchange="handlePromise"></switch>
+    </view>
+    <button bindtap="showShareMenu">showShareMenu</button>
+    <button bindtap="hideShareMenu">hideShareMenu</button>
+    <button open-type="share">分享open-type</button>
+  </view>
+  <template is="foot" />
+</view>

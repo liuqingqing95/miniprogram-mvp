@@ -1,0 +1,21 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'video'}}" />
+  <video
+    id="myVideo"
+    muted="{{true}}"
+    autoplay="{{false}}"
+    enableDanmu="{{true}}"
+    style="height:{{height}}px"
+    show-center-play-btn="{{false}}"
+    src="https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4">
+  </video>
+
+  <button bindtap="bindVideoPlay">play</button>
+  <button bindtap="bindVideoPause">pause</button>
+  <button bindtap="bindVideoStop">stop</button>
+  <button bindtap="bindVideoSeek">seek(10) 到 10s</button>
+
+  <template is="foot" />
+</view>

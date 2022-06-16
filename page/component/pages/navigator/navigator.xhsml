@@ -1,0 +1,22 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'navigator'}}" />
+  <view class="page-body">
+    <view class="btn-area">
+      <navigator url="navigate?title=navigate" bindcomplete="complete" hover-class="ohter-navigator">
+        <button type="default">跳转到新页面</button>
+      </navigator>
+      <navigator url="../image/image2/index" hover-class="other-navigator-hover">
+        <button type="default">相对路径跳转</button>
+      </navigator>
+      <navigator url="redirect?title=redirect" open-type="redirect" hover-class="other-navigator-hover">
+        <button type="default">在当前页打开</button>
+      </navigator>
+      <navigator url="/page/API/index" open-type="switchTab" hover-class="other-navigator-hover">
+        <button type="default">SwitchTab</button>
+      </navigator>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

@@ -1,0 +1,50 @@
+<import src="../../../../pages/common/status.xhsml" />
+<view class="container">
+  <template is="status" data="{{apiData}}" />
+  <view class="page-head">
+    <view class="page-head-title">image</view>
+    <view class="page-head-line"></view>
+    <view xhs:if="{{desc}}" class="page-head-desc">{{desc}}</view>
+  </view>
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">Local Image</view>
+      <view class="page-section-ctn">
+        <image class="image test" src="../../resources/pic/1.jpg" bindload="onLoad" />
+      </view>
+    </view>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">Internet Image</view>
+      <view class="page-section-ctn">
+        <image class="image" src="{{imageUrl}}" />
+      </view>
+    </view>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">Webp Image</view>
+      <view class="page-section-ctn">
+        <image class="image" webp src="{{webpImageURL}}" mode="aspectFit" />
+      </view>
+    </view>
+    <view class="page__bd">
+      <view class="section section_gap" xhs:for="{{array}}" xhs:for-item="item">
+        <view class="section__title">{{item.text}}/lazy-load</view>
+        <view class="section__ctn">
+          <image lazy-load="{{true}}" style="width: 200px; height: 200px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
+        </view>
+      </view>
+      <view class="section__ctn">
+        <image style="width: 200px; height: 200px; background-color: #eeeeee;" src="http://404.com" binderror="onError"></image>
+      </view>
+    </view>
+    <view style="background-color: red;">
+      <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" mode="widthFix" style="padding: 10px; width: 100px; height: 100px;border: 1px solid; background-color: yellow;"></image>
+    </view>
+
+    <view style="background-color: red;" >
+      <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" mode="heightFix" style="padding: 10px; width: 100px; height: 100px;border: 1px solid; background-color: yellow;"></image>
+    </view>
+  </view>
+  <navigator class="page-foot" openType="switchTab" url="/page/component/index" hover-class="none">
+    <image class="icon-foot" src="../../../../image/icon_foot.png"></image>
+  </navigator>
+</view>

@@ -1,0 +1,16 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'loading'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="btn-area">
+      <button type="default" bindtap="title">loading title</button>
+      <button type="default" bindtap="fail">loading fail</button>
+      <button type="default" bindtap="mask">loading mask</button>
+      <button type="default" bindtap="hide">loading hide</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

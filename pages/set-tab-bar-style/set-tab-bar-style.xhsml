@@ -1,0 +1,18 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'setTabBarItem'}}" />
+  <template is="status" data="{{apiData}}" />
+  <div class="page-body">
+    <view class="btn-area">
+      <input class="input" type="text" placeholder="color" bindinput="handleColor" />
+      <input class="input" type="text" placeholder="selectedColor" bindinput="handleSelectColor" />
+      <input class="input" type="text" placeholder="backgroundColor" bindinput="handleBackgroundColor" />
+      <input class="input" type="text" placeholder="borderStyle" bindinput="handleBorderStyle" />
+      <button type="primary" bindtap="setTabBarStyle">设置</button>
+      <button type="primary" bindtap="fail">失败</button>
+    </view>
+  </div>
+  <template is="foot" />
+</view>

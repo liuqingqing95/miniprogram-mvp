@@ -1,0 +1,40 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'getLocation/startLocationUpdate/startLocationUpdateBackground/stopLocationUpdate/onLocationChange/offLocationChange'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <view class="btn-area">
+        <label for="">chooseLocation：latitude</label>
+        <input class="input" type="text" value="{{latitude}}" bindinput="handleLatitude" />
+        <label for="">chooseLocation：longitude</label>
+        <input class="input" type="text" value="{{longitude}}" bindinput="handleLongitude" />
+        <button type="primary" bindtap="chooseLocation">chooseLocation</button>
+        <button type="primary" bindtap="chooseLocationNoParams">chooseLocation 无参数</button>
+        <view>
+          <text>altitude</text>
+          <switch checked="{{altitude}}" bindchange="handleAltitude" />
+        </view>
+        <view>
+          <text>isHighAccuracy</text>
+          <switch checked="{{isHighAccuracy}}" bindchange="handleHighAccuracy" />
+        </view>
+        <input class="input" type="text" placeholder="highAccuracyExpireTime" value="{{highAccuracyExpireTime}}" bindinput="handleHighAccuracyExpireTime" />
+        <input class="input" type="text" placeholder="type" value="{{type}}" bindinput="handleType" />
+        <text style="text-align:center">
+          接收locationChangeCount: {{count}}
+        </text>
+        <button type="primary" bindtap="getLocation">getLocation</button>
+        <button type="primary" bindtap="startLocationUpdate">startLocationUpdate</button>
+        <button type="primary" bindtap="startLocationUpdateBackground">startLocationUpdateBackground</button>
+        <button type="primary" bindtap="stopLocationUpdate">stopLocationUpdate</button>
+        <button type="primary" bindtap="onLocationChange">onLocationChange</button>
+        <button type="primary" bindtap="offLocationChange">offLocationChange</button>
+        <button type="primary" bindtap="openLocation">openLocation</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

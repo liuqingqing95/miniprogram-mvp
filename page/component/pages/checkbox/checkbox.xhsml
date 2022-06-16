@@ -1,0 +1,60 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'checkbox'}}"/>
+
+  <view class="page-body">
+    <view class="page-section page-section-spacing">
+      <checkbox
+        checked="{{checked}}"
+        disabled="{{disabled}}"
+        color="{{color}}"
+      />
+    </view>
+
+    <view class="page-section" style="margin-top: 20px;margin-bottom: 20px;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">当前是否选中<text class="filed-tip">(checked)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{checked}}" bindchange="changeChecked" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">是否禁用<text class="filed-tip">(disabled)</text></view>
+          <view class="weui-cell__ft">
+            <switch checked="{{disabled}}" bindchange="changeDisabled" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">checkbox的颜色 <text class="filed-tip">(color)</text></view>
+          <view class="weui-cell__ft" style="flex:1">
+            <input class="weui-input" value="{{color}}" bindinput="changeColor" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">checkbox-group</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view>当前选择value: {{curValue}}</view>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="weui-cell weui-check__label" xhs:for="{{items}}" xhs:key="{{item.value}}">
+            <view class="weui-cell__hd">
+              <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

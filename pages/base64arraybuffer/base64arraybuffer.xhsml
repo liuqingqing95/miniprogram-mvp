@@ -1,0 +1,15 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'arrayBufferToBase64/base64ToArrayBuffer'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <input class="input" placeholder="base64String" type="text" bindinput="handleInput"></input>
+      <button bindtap="handleBase64ToArrayBuffer">base64ToArrayBuffer</button>
+      <button bindtap="handleArrayBufferToBase64">arrayBufferToBase64</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

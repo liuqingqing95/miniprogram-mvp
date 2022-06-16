@@ -1,0 +1,19 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: '第三方平台'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <form>
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title"></view>
+      </view>
+    </form>
+    <view class="btn-area">
+      <button type="primary" bindtap="getExtConfig">getExtConfig</button>
+      <button type="primary" bindtap="getExtConfigSync">getExtConfigSync</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

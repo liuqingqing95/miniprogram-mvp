@@ -1,0 +1,110 @@
+<import src="../../../common/head.xhsml" />
+<import src="../../../common/foot.xhsml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'event'}}"/>
+  <view class="page-body">
+    <view class="weui-cells weui-cells_after-title" style="margin-bottom:16px">
+      单个事件
+      <view><text class="filed-tip">tap/touchstart/touchend/touchmove/longtap/longpress</text></view>
+    </view>
+
+    <view bind:touchstart="bindtouchstart" bind:touchmove="bindtouchmove" bind:touchend="bindtouchend">bind multi event test</view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindtap="bindtap">
+        <text>tap count: {{tapCount}}</text>
+      </view>
+    </view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindtouchstart="bindtouchstart">
+        <text>touchstart count: {{touchstartCount}}</text>
+      </view>
+    </view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindtouchmove="bindtouchmove">
+        <text>touchmove count: {{touchmoveCount}}</text>
+      </view>
+    </view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindtouchend="bindtouchend">
+        <text>touchend count: {{touchendCount}}</text>
+      </view>
+    </view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindlongtap="bindlongtap">
+        <text>longtap count: {{longtapCount}}</text>
+      </view>
+    </view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindlongpress="bindlongpress">
+        <text>longpress count: {{longpressCount}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-body">
+    <view class="weui-cells weui-cells_after-title" style="margin-bottom:16px">
+      组合事件
+      <view><text class="filed-tip"> touchstart + touchend + touchmove</text></view>
+    </view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindtouchstart="bindtouchstart" bindtouchmove="bindtouchmove" bindtouchend="bindtouchend">
+        <view>
+          <text>touchstart count: {{touchstartCount}}</text>
+        </view>
+        <view>
+          <text>touchmove count: {{touchmoveCount}}</text>
+        </view>
+        <view>
+          <text>touchend count: {{touchendCount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-body">
+    <view class="weui-cells weui-cells_after-title" style="margin-bottom:16px">
+      阻止冒泡
+      <view><text class="filed-tip">.stop</text></view>
+    </view>
+
+    <view class="page-section" style="margin-bottom: 20px;">
+      <view bindtap="bindtap1" class="item" hover-class="bg1">
+        outer view (bindtap)
+        <view catchtap="bindtap2" class="item" hover-class="bg2">
+          middle view (catchtap)
+          <view bindtap="bindtap3" class="item" hover-class="bg3">
+            inner view (bindtap)
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-body" style="margin-bottom:50px;">
+    <view class="weui-cells weui-cells_after-title" style="margin-bottom:16px">
+      事件捕获
+      <view><text class="filed-tip">.catchtap {{result}}</text></view>
+    </view>
+
+    <view
+      bind:tap="bindtapcapture1"
+      capture-bind:tap="bindtapcapture2"
+    >
+      middle view (capture-bind:bindtap2 / bindtap: bindtap1)
+      <view
+        bind:tap="bindtapcapture3"
+       capture-bind:tap="bindtapcapture4"
+      >
+        inner view (capture-bind:bindtap4 / bindtap: bindtap3)
+      </view>
+    </view>
+  </view>
+</view>

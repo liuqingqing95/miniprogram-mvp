@@ -1,0 +1,25 @@
+<import src="../common/head.xhsml" />
+<import src="../common/foot.xhsml" />
+<import src="../common/status.xhsml" />
+<view class="container">
+  <template is="head" data="{{title: 'navigateTo/Back, redirectTo'}}" />
+  <template is="status" data="{{apiData}}" />
+  <view class="page-body">
+    <view class="btn-area">
+      <button bindtap="navigateTo">navigateTo</button>
+      <button bindtap="navigateToError">navigateTo Error</button>
+      <button bindtap="navigateBack">navigateBack</button>
+      <button bindtap="navigateBack1">navigateBack -1</button>
+      <button bindtap="redirectTo">redirectTo</button>
+      <button bindtap="redirectToError">redirectTo Error</button>
+      <button bindtap="switchTab">switchTab</button>
+      <button bindtap="switchTabError">switchTab Error</button>
+      <button bindtap="reLaunch">reLaunch</button>
+      <button bindtap="reLaunchError">reLaunch Error</button>
+      <navigator open-type="exit">
+        <button>exitMiniProgram</button>
+      </navigator>
+    </view>
+  </view>
+  <template is="foot" />
+</view>
