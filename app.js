@@ -19,6 +19,7 @@ App({
       })
     }
   },
+  
   onPageNotFound(opts) {
     xhs?.showToast({ title: 'App:onPageNotFound' })
     console.log('App:onPageNotFound========', opts)
