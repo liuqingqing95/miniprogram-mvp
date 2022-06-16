@@ -11,4 +11,4 @@
 
 ### 提交问题
 
-开发过程中，有任何问题，欢迎在 [issue]([https://miniapp.xiaohongshu.com/docs/guide/miniIntroduce](https://github.com/redengineer/redmini/issues)) 下留言与我们交流
+开发过程中，有任何问题，欢迎在 [issue](https://github.com/redengineer/redmini/issues) 下留言与我们交流
